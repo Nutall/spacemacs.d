@@ -468,8 +468,8 @@ before packages are loaded."
   (xterm-mouse-mode -1)
   (global-set-key (kbd "C-c y") 'youdao-dictionary-search-at-point+)
   ;; You can replace `spacemacs/jump-to-definition' with `helm-gtags-dwim' if you want.
-  ;;(define-key evil-normal-state-map (kbd "M-.") 'helm-gtags-dwim)
-  (define-key evil-normal-state-map (kbd "M-.") 'spacemacs/jump-to-definition)
+  ;; (define-key evil-normal-state-map (kbd "M-.") 'spacemacs/jump-to-definition)
+  (define-key evil-normal-state-map (kbd "M-.") 'helm-gtags-dwim)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
