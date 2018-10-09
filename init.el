@@ -46,7 +46,6 @@ This function should only modify configuration layer settings."
      git
      semantic
      gtags
-     auto-completion
      c-c++
      (c-c++ :variables c-c++-enable-clang-support t)
      java
