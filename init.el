@@ -38,7 +38,7 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     helm
+     (helm  :variables helm-use-fuzzy 'source)
      (org   :variables org-enable-github-support t)
      pandoc
      spacemacs-org
@@ -54,20 +54,23 @@ This function should only modify configuration layer settings."
      ;; (java :variables java-backend 'lsp)
      python
      (python :variables python-enable-yapf-format-on-save t)
-     ipython-notebook
+     ;; ipython-notebook
      (shell :variables
              shell-default-height 30
              shell-default-position 'bottom)
      html
      markdown
      syntax-checking
+     ;; dash
      (dash :variables
-           helm-dash-docset-newpath "~/.local/share/Zeal/Zeal/docsets")
+           helm-dash-docset-newpath "/Users/yijun/Library/Application Support/Dash/DocSets")
+     ;;       helm-dash-docset-newpath "~/.local/share/Zeal/Zeal/docsets")
      graphviz
      (plantuml :variables
-               plantuml-jar-path "~/.local/share/plantUml/plantuml.jar"
-               org-plantuml-jar-path "~/.local/share/plantUml/plantuml.jar"
-               plantuml-output-type "png")
+              plantuml-jar-path "~/.local/share/plantUml/plantuml.jar"
+              org-plantuml-jar-path "~/.local/share/plantUml/plantuml.jar"
+              plantuml-output-type "png")
+     ;; plantuml
      ;; better-defaults
      ;; spell-checking
      ;; version-control
@@ -206,7 +209,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-themes '(
                          ;; spacemacs-dark
                          zenburn
-                         spacemacs-light)
+                         ;; spacemacs-light
+			 )
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `vim-powerline' and `vanilla'. The first three
@@ -224,7 +228,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 17
+                               :size 16
                                :weight normal
                                :width normal)
 
