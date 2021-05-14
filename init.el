@@ -44,22 +44,22 @@ This function should only modify configuration layer settings."
             org-enable-github-support t)
      pandoc
      spacemacs-org
-     auto-completion
-     emacs-lisp
+     ;; auto-completion
+     (auto-completion :variables
+		      auto-completion-enable-sort-by-usage t
+		      spacemacs-default-company-backends '(company-clang company-files company-capf)
+		      )
+     ;; emacs-lisp
      git
      gtags
-     (c-c++ :variables
-            c-c++-enable-clang-support t)
+     c-c++
      semantic
-     ;; lsp
-     java
-     (python :variables
-             python-enable-yapf-format-on-save t)
+     ;; java
+     ;; (python :variables
+     ;;         python-enable-yapf-format-on-save t)
      (shell :variables
              shell-default-height 30
              shell-default-position 'bottom)
-     html
-     markdown
      syntax-checking
      (dash :variables
            helm-dash-docset-newpath "/Users/yijun/Library/Application Support/Dash/DocSets")
@@ -68,7 +68,16 @@ This function should only modify configuration layer settings."
                plantuml-jar-path "~/.local/share/plantuml/plantuml.jar"
                org-plantuml-jar-path "~/.local/share/plantuml/plantuml.jar")
                ;; plantuml-output-type "png")
-     osx
+     (osx :variables
+      	  osx-command-as       'meta
+     	  osx-option-as        'hyper
+      	  osx-control-as       'control
+     	  osx-function-as      nil
+     	  osx-right-command-as 'left
+     	  osx-right-option-as  'left
+     	  osx-right-control-as 'left
+     	  osx-swap-option-and-command nil
+     )
      imenu-list
      (latex :variables
             latex-enable-auto-fill t
@@ -85,7 +94,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(youdao-dictionary)
+   dotspacemacs-additional-packages '()  ;; youdao-dictionary)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -231,7 +240,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 16
+                               :size 15
                                :weight normal
                                :width normal)
 
@@ -467,12 +476,12 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq configuration-layer-elpa-archives
-        ;; '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
-        ;;   ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
-        ;;   ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")))
-        '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-          ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-          ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
+        '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
+          ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
+           ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")))
+        ;; '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ;;   ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+        ;;   ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
   (setq plantuml-default-exec-mode 'jar)
   )
 
@@ -492,7 +501,7 @@ before packages are loaded."
   (setq-default indent-tabs-mode t)
   (setq-default tab-width 8)
   (xterm-mouse-mode -1)
-  (global-set-key (kbd "C-c y") 'youdao-dictionary-search-at-point+)
+  ;; (global-set-key (kbd "C-c y") 'youdao-dictionary-search-at-point+)
   ;; You can replace `spacemacs/jump-to-definition' with `helm-gtags-dwim' if you want.
   ;; (define-key evil-normal-state-map (kbd "M-.") 'spacemacs/jump-to-definition)
   (define-key evil-normal-state-map (kbd "M-.") 'helm-gtags-dwim)
@@ -522,6 +531,8 @@ before packages are loaded."
       (message "done")))
   (setq TeX-engine 'xetex)
   (add-to-list 'exec-path "/usr/local/bin")
+  (add-to-list 'exec-path "/usr/local/opt/llvm/bin")
+  (semantic-mode t)
   )
 
 
@@ -546,7 +557,7 @@ This function is called at the very end of Spacemacs initialization."
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (monokai-theme pandoc reveal-in-osx-finder osx-trash osx-dictionary osx-clipboard launchctl pandoc-mode ox-pandoc ox-gfm plantuml-mode graphviz-dot-mode zenburn-theme zeal-at-point youdao-dictionary yasnippet-snippets yapfify xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tagedit symon string-inflection stickyfunc-enhance srefactor spaceline-all-the-icons smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-ipython neotree nameless mvn multi-term move-text mmm-mode meghanada maven-test-mode markdown-toc magit-svn magit-gitflow macrostep lorem-ipsum live-py-mode link-hint indent-guide importmagic impatient-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-gtags helm-gitignore helm-git-grep helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports gradle-mode google-translate google-c-style golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md ggtags fuzzy font-lock+ flycheck-rtags flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help ensime emmet-mode elisp-slime-nav ein editorconfig dumb-jump dotenv-mode doom-modeline disaster diminish define-word cython-mode counsel-projectile company-web company-statistics company-rtags company-emacs-eclim company-c-headers company-anaconda column-enforce-mode clean-aindent-mode clang-format centered-cursor-mode auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell)))
+    (smartparens rtags helm helm-core org-ql ov org-super-agenda magit git-commit with-editor transient treemacs lv projectile dash request org-plus-contrib evil undo-tree exec-path-from-shell vterm terminal-here epc ctable concurrent dash-docs flycheck-ycmd pos-tip flycheck dash-at-point blacken anaconda-mode pythonic lsp-ui lsp-python-ms helm-lsp dap-mode lsp-treemacs bui cquery company-lsp ccls lsp-mode markdown-mode dash-functional monokai-theme pandoc reveal-in-osx-finder osx-trash osx-dictionary osx-clipboard launchctl pandoc-mode ox-pandoc ox-gfm plantuml-mode graphviz-dot-mode zenburn-theme zeal-at-point youdao-dictionary yasnippet-snippets yapfify xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tagedit symon string-inflection stickyfunc-enhance srefactor spaceline-all-the-icons smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-ipython neotree nameless mvn multi-term move-text mmm-mode meghanada maven-test-mode markdown-toc magit-svn magit-gitflow macrostep lorem-ipsum live-py-mode link-hint indent-guide importmagic impatient-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-gtags helm-gitignore helm-git-grep helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports gradle-mode google-translate google-c-style golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md ggtags fuzzy font-lock+ flycheck-rtags flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help ensime emmet-mode elisp-slime-nav ein editorconfig dumb-jump dotenv-mode doom-modeline disaster diminish define-word cython-mode counsel-projectile company-web company-statistics company-rtags company-emacs-eclim company-c-headers company-anaconda column-enforce-mode clean-aindent-mode clang-format centered-cursor-mode auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell)))
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
    (quote
