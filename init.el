@@ -38,8 +38,9 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     (helm  :variables
-            helm-use-fuzzy 'source)
+     ;; (helm  :variables
+     ;;        helm-use-fuzzy 'source)
+     ivy
      (org   :variables
             org-enable-github-support t)
      pandoc
