@@ -373,7 +373,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
 
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
    ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
@@ -616,52 +616,3 @@ before packages are loaded."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-(defun dotspacemacs/emacs-custom-settings ()
-  "Emacs custom settings.
-This is an auto-generated function, do not modify its content directly, use
-Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(company-quickhelp-color-background "#4F4F4F")
- '(company-quickhelp-color-foreground "#DCDCCC")
- '(evil-want-Y-yank-to-eol nil)
- '(fci-rule-color "#383838")
- '(nrepl-message-colors
-   (quote
-    ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
- '(package-selected-packages
-   (quote
-    (smartparens rtags helm helm-core org-ql ov org-super-agenda magit git-commit with-editor transient treemacs lv projectile dash request org-plus-contrib evil undo-tree exec-path-from-shell vterm terminal-here epc ctable concurrent dash-docs flycheck-ycmd pos-tip flycheck dash-at-point blacken anaconda-mode pythonic lsp-ui lsp-python-ms helm-lsp dap-mode lsp-treemacs bui cquery company-lsp ccls lsp-mode markdown-mode dash-functional monokai-theme pandoc reveal-in-osx-finder osx-trash osx-dictionary osx-clipboard launchctl pandoc-mode ox-pandoc ox-gfm plantuml-mode graphviz-dot-mode zenburn-theme zeal-at-point youdao-dictionary yasnippet-snippets yapfify xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tagedit symon string-inflection stickyfunc-enhance srefactor spaceline-all-the-icons smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-ipython neotree nameless mvn multi-term move-text mmm-mode meghanada maven-test-mode markdown-toc magit-svn magit-gitflow macrostep lorem-ipsum live-py-mode link-hint indent-guide importmagic impatient-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-gtags helm-gitignore helm-git-grep helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports gradle-mode google-translate google-c-style golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md ggtags fuzzy font-lock+ flycheck-rtags flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help ensime emmet-mode elisp-slime-nav ein editorconfig dumb-jump dotenv-mode doom-modeline disaster diminish define-word cython-mode counsel-projectile company-web company-statistics company-rtags company-emacs-eclim company-c-headers company-anaconda column-enforce-mode clean-aindent-mode clang-format centered-cursor-mode auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell)))
- '(vc-annotate-background "#2B2B2B")
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#BC8383")
-     (40 . "#CC9393")
-     (60 . "#DFAF8F")
-     (80 . "#D0BF8F")
-     (100 . "#E0CF9F")
-     (120 . "#F0DFAF")
-     (140 . "#5F7F5F")
-     (160 . "#7F9F7F")
-     (180 . "#8FB28F")
-     (200 . "#9FC59F")
-     (220 . "#AFD8AF")
-     (240 . "#BFEBBF")
-     (260 . "#93E0E3")
-     (280 . "#6CA0A3")
-     (300 . "#7CB8BB")
-     (320 . "#8CD0D3")
-     (340 . "#94BFF3")
-     (360 . "#DC8CC3"))))
- '(vc-annotate-very-old-color "#DC8CC3"))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
