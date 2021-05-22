@@ -44,16 +44,18 @@ This function should only modify configuration layer settings."
      (org   :variables
             org-enable-github-support t)
      pandoc
+     lsp
      spacemacs-org
      ;; auto-completion
      (auto-completion :variables
 		      auto-completion-enable-sort-by-usage t
 		      spacemacs-default-company-backends '(company-clang company-files company-capf)
 		      )
-     ;; emacs-lisp
+     emacs-lisp
      git
      gtags
-     c-c++
+     (c-c++ :variables
+	    c-c++-backend 'lsp-clangd)
      semantic
      ;; java
      ;; (python :variables
