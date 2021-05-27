@@ -44,7 +44,7 @@ This function should only modify configuration layer settings."
      (org   :variables
             org-enable-github-support t)
      pandoc
-     lsp
+     ;; lsp
      spacemacs-org
      ;; auto-completion
      (auto-completion :variables
@@ -54,8 +54,9 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      gtags
-     (c-c++ :variables
-	    c-c++-backend 'lsp-clangd)
+     c-c++
+     ;; (c-c++ :variables
+     ;; 	    c-c++-backend 'lsp-clangd)
      semantic
      ;; java
      ;; (python :variables
