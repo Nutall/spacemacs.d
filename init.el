@@ -86,6 +86,7 @@ This function should only modify configuration layer settings."
      (latex :variables
             latex-enable-auto-fill t
             latex-build-command "LaTeX")
+     html
      ;; better-defaults
      ;; spell-checking
      ;; version-control
@@ -273,7 +274,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 15
+                               :size 16
                                :weight normal
                                :width normal)
 
@@ -557,8 +558,8 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq configuration-layer-elpa-archives
-        '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
-          ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
+         '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
+           ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
            ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")))
         ;; '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
         ;;   ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
