@@ -66,7 +66,7 @@ This function should only modify configuration layer settings."
              shell-default-position 'bottom)
      syntax-checking
      (dash :variables
-           helm-dash-docset-newpath "/Users/yijun/Library/Application Support/Dash/DocSets")
+            dash-docs-docset-newpath "/Users/yijun/Library/Application Support/Dash/DocSets")
      graphviz
      (plantuml :variables
                plantuml-jar-path "~/.local/share/plantuml/plantuml.jar"
