@@ -589,7 +589,8 @@ before packages are loaded."
   ;; (global-set-key (kbd "C-c y") 'youdao-dictionary-search-at-point+)
   ;; You can replace `spacemacs/jump-to-definition' with `helm-gtags-dwim' if you want.
   ;; (define-key evil-normal-state-map (kbd "M-.") 'spacemacs/jump-to-definition)
-  (define-key evil-normal-state-map (kbd "M-.") 'helm-gtags-dwim)
+  ;; (define-key evil-normal-state-map (kbd "M-.") 'helm-gtags-dwim)
+  (define-key evil-normal-state-map (kbd "M-.") 'counsel-gtags-dwim)
   ;; save buffer to png in plantuml mode
   ;; Execute plantuml-save-png function with C-c C-s at plantuml-mode
   (add-hook 'plantuml-mode-hook
