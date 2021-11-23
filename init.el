@@ -55,6 +55,7 @@ This function should only modify configuration layer settings."
      git
      gtags
      c-c++
+     rust
      ;; (c-c++ :variables
      ;; 	    c-c++-backend 'lsp-clangd)
      semantic
@@ -564,7 +565,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
          '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
            ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
            ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")
-	   ("nongnu"   . "https://elpa.nongnu.org/nongnu/")))
+	   ("nongnu"   . "http://elpa.nongnu.org/nongnu/")))
         ;; '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
         ;;   ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
         ;;   ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
