@@ -60,6 +60,7 @@ This function should only modify configuration layer settings."
      ;; 	    c-c++-backend 'lsp-clangd)
      semantic
      ;; java
+     python
      ;; (python :variables
      ;;         python-enable-yapf-format-on-save t)
      (shell :variables
@@ -101,7 +102,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()  ;; youdao-dictionary)
+   dotspacemacs-additional-packages '()
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -162,6 +163,13 @@ It should only modify the values of Spacemacs settings."
    ;; performance issues due to garbage collection operations.
    ;; (default '(100000000 0.1))
    dotspacemacs-gc-cons '(100000000 0.1)
+
+   ;; Set `read-process-output-max' when startup finishes.
+   ;; This defines how much data is read from a foreign process.
+   ;; Setting this >= 1 MB should increase performance for lsp servers
+   ;; in emacs 27.
+   ;; (default (* 1024 1024))
+   dotspacemacs-read-process-output-max (* 1024 1024)
 
    ;; If non-nil then Spacelpa repository is the primary source to install
    ;; a locked version of packages. If nil then Spacemacs will install the
@@ -553,7 +561,8 @@ This function defines the environment variables for your Emacs session. By
 default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
-  (spacemacs/load-spacemacs-env))
+  (spacemacs/load-spacemacs-env)
+)
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
@@ -562,21 +571,23 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq configuration-layer-elpa-archives
-         '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
-           ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
-           ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")
-	   ("nongnu"   . "http://elpa.nongnu.org/nongnu/")))
-        ;; '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ;;   ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-        ;;   ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
+         ;; '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
+         ;;   ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
+         ;;   ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")
+	 ;;   ("nongnu"   . "http://elpa.nongnu.org/nongnu/")))
+
+        '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+          ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+          ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
   (setq plantuml-default-exec-mode 'jar)
-  )
+)
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
-dump.")
+dump."
+)
 
 
 (defun dotspacemacs/user-config ()
