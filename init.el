@@ -575,14 +575,14 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq configuration-layer-elpa-archives
-         ;; '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
-         ;;   ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
-         ;;   ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")
-	 ;;   ("nongnu"   . "http://elpa.nongnu.org/nongnu/")))
+         '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
+           ;; ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
+           ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")
+	   ("nongnu"   . "http://elpa.nongnu.org/nongnu/")))
 
-        '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-          ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-          ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
+        ;; '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ;;   ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+        ;;   ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
   (setq plantuml-default-exec-mode 'jar)
 )
 
