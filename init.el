@@ -127,8 +127,8 @@ It should only modify the values of Spacemacs settings."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
-   ;; If non-nil then enable support for the portable dumper. You'll need
-   ;; to compile Emacs 27 from source following the instructions in file
+   ;; If non-nil then enable support for the portable dumper. You'll need to
+   ;; compile Emacs 27 from source following the instructions in file
    ;; EXPERIMENTAL.org at to root of the git repository.
    ;;
    ;; WARNING: pdumper does not work with Native Compilation, so it's disabled
@@ -531,7 +531,7 @@ It should only modify the values of Spacemacs settings."
    ;; Color highlight trailing whitespace in all prog-mode and text-mode derived
    ;; modes such as c++-mode, python-mode, emacs-lisp, html-mode, rst-mode etc.
    ;; (default t)
-   dotspacemacs-show-trailing-whitespace t 
+   dotspacemacs-show-trailing-whitespace t
 
    ;; Delete whitespace while saving buffer. Possible values are `all'
    ;; to aggressively delete empty line and long sequences of whitespace,
@@ -589,14 +589,14 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq configuration-layer-elpa-archives
-         '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
-           ;; ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
-           ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")
-	   ("nongnu"   . "http://elpa.nongnu.org/nongnu/")))
+         ;; '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
+         ;;   ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
+         ;;   ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")))
+	 ;;   ("nongnu"   . "http://elpa.nongnu.org/nongnu/"))
 
-        ;; '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ;;   ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-        ;;   ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
+        '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+          ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+          ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
   (setq plantuml-default-exec-mode 'jar)
 )
 
