@@ -43,6 +43,7 @@ This function should only modify configuration layer settings."
      ivy
      (org   :variables
             org-enable-github-support t)
+     markdown
      pandoc
      ;; lsp
      spacemacs-org
@@ -640,7 +641,7 @@ before packages are loaded."
     (interactive)
     (when (buffer-modified-p)
       (map-y-or-n-p "Save this buffer before executing PlantUML?"
-                    ‘save-buffer (list (current-buffer))))
+                    'save-buffer (list (current-buffer))))
     (let ((code (buffer-string))
           out-file
           cmd)
