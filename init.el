@@ -72,8 +72,8 @@ This function should only modify configuration layer settings."
             dash-docs-docset-newpath "/Users/yijun/Library/Application Support/Dash/DocSets")
      graphviz
      (plantuml :variables
-               plantuml-jar-path "~/.local/share/plantuml/plantuml.jar"
-               org-plantuml-jar-path "~/.local/share/plantuml/plantuml.jar")
+               plantuml-jar-path "~/.local/share/plantuml/plantuml-1.2023.8.jar"
+               org-plantuml-jar-path "~/.local/share/plantuml/plantuml-1.2023.8.jar")
                ;; plantuml-output-type "png")
      (osx :variables
       	  osx-command-as       'meta
